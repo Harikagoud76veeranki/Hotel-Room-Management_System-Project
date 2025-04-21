@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration>
+    <!-- The session-factory element configures the Hibernate SessionFactory, which is essential for
+         interacting with the database. -->
+    <session-factory>
+
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.Driver_class">
+            com.mysql.cj.jdbc.Driver  <!-- MySQL JDBC driver class used for database connection -->
+        </property>
+        
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/schoolmgmt  <!-- Database URL specifying the database name 'schoolmgmt' on localhost at port 3306 -->
+        </property>
+
+        <property name="hibernate.connection.user">
+            root  <!-- Username for connecting to the database -->
+        </property>
+
+        <property name="hibernate.connection.password">
+            Harikagoud76  <!-- Password for the database connection -->
+        </property>
+
+        <!-- Hibernate dialect used for database-specific SQL generation -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect  <!-- Specifies MySQL as the database dialect -->
+        </property>
+
+        <!-- To display SQL queries in the console (useful for debugging) -->
+        <property name="hibernate.show_sql">
+            true  <!-- Set to 'true' to show SQL statements in the console -->
+        </property>
+
+        <!-- Auto-generate database schema (e.g., create or update tables) based on entities -->
+        <property name="hibernate.hbm2ddl.auto">
+            update  <!-- Hibernate will update the schema on startup to reflect changes in entity mappings -->
+        </property>
+
+        <!-- Mapping the entity classes to corresponding database tables -->
+        <mapping class="com.hibernate.entity.Booking_Status"/>  <!-- Mapping the 'Booking_Status' entity class -->
+        <mapping class="com.hibernate.entity.Customer"/>  <!-- Mapping the 'Customer' entity class -->
+        <mapping class="com.hibernate.entity.Employee"/>  <!-- Mapping the 'Employee' entity class -->
+        <mapping class="com.hibernate.entity.Hotel"/>  <!-- Mapping the 'Hotel' entity class -->
+        <mapping class="com.hibernate.entity.Payments"/>  <!-- Mapping the 'Payments' entity class -->
+        <mapping class="com.hibernate.entity.Rooms"/>  <!-- Mapping the 'Rooms' entity class -->
+
+    </session-factory>
+</hibernate-configuration>
